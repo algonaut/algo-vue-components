@@ -18,15 +18,15 @@ export function assetName(val) {
 }
 
 export function unitName(val) {
-  if (!assets.assetName(val)) {
+  if (!assets.unitName(val)) {
     return 'Please provide a unit name with less than 8 characters';
   }
   return [];
 }
 
 export function totalIssuance(val) {
-  if (!assets.assetTotalIssuance(val)) {
-    return `Please provide a valid number of assets under
+  if (!assets.assetTotalIssuance(parseInt(val, 10))) {
+    return `Please provide a valid number of assets no more than
     ${Number.MAX_SAFE_INTEGER} to add to the reserve`;
   }
   return [];

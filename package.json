@@ -13,8 +13,7 @@
     "bootstrap-vue": "^2.14.0",
     "core-js": "^3.6.4",
     "vue": "^2.6.11",
-    "vue-form-generator": "^2.3.4",
-    "vuelidate": "^0.7.5"
+    "vue-form-generator": "^2.3.4"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.3.0",

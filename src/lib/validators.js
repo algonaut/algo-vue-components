@@ -32,8 +32,16 @@ export function totalIssuance(val) {
   return [];
 }
 
+export function assetMetadataHash(val) {
+  if (!assets.assetMetadataHash(val)) {
+    return 'Please provide a valid asset metadata hash';
+  }
+}
+
 export default {
+  algoAddress,
   assetName,
   unitName,
-  totalIssuance
+  totalIssuance,
+  assetMetadataHash
 };

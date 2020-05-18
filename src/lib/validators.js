@@ -1,6 +1,7 @@
 import {
   core,
-  assets
+  assets,
+  transactionFields
 } from '@algonaut/algo-validation-agent/dist/algo-validation-agent.cjs';
 
 export function algoAddress(val) {
@@ -32,6 +33,20 @@ export function totalIssuance(val) {
   return [];
 }
 
+export function assetAmt(val) {
+  if (!transactionFields.transactionAmount(parseInt(val, 10))) {
+    return `Please provide a valid number of assets no more than
+    ${Number.MAX_SAFE_INTEGER} to send`;
+  }
+  return [];
+}
+
+export function xaid(val) {
+  if (!core.isAssetIndex(parseInt(val, 10))) {
+    return `Please provide a valid Algorand asset index`;
+  }
+}
+
 export function assetMetadataHash(val) {
   if (!assets.assetMetadataHash(val)) {
     return 'Please provide a valid asset metadata hash';
@@ -43,5 +58,7 @@ export default {
   assetName,
   unitName,
   totalIssuance,
+  assetAmt,
+  xaid,
   assetMetadataHash
 };

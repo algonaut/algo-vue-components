@@ -14,9 +14,9 @@ export default {
   data() {
     return {
       model: {
+        xaid: '',
         aamt: '',
         arcv: '',
-        asnd: '',
         snd: ''
       },
       schema: {
@@ -24,28 +24,41 @@ export default {
           {
             type: 'input',
             inputType: 'text',
+            label: 'Algorand Asset ID',
+            model: 'xaid',
+            required: true,
+            validator: validators.xaid
+          },
+          {
+            type: 'input',
+            inputType: 'text',
             label: 'Amount',
-            model: 'aamt'
+            required: true,
+            model: 'aamt',
+            validator: validators.assetAmt
           },
           {
             type: 'input',
             inputType: 'text',
-            label: 'Revoke from',
-            model: 'asnd',
-            validator: validators.algoAddress
-          },
-          {
-            type: 'input',
-            inputType: 'text',
-            label: 'Transfer to',
-            model: 'arcv',
-            validator: validators.algoAddress
-          },
-          {
-            type: 'input',
-            inputType: 'text',
-            label: 'Freeze Manager Address',
+            label: 'Clawback address',
             model: 'snd',
+            required: true,
+            validator: validators.algoAddress
+          },
+          {
+            type: 'input',
+            inputType: 'text',
+            label: 'Recipient address',
+            model: 'arcv',
+            required: true,
+            validator: validators.algoAddress
+          },
+          {
+            type: 'input',
+            inputType: 'text',
+            label: 'Sender Address',
+            model: 'snd',
+            required: true,
             validator: validators.algoAddress
           }
         ]

@@ -1,12 +1,19 @@
 {
   "name": "@algonaut/algo-vue-components",
+  "repository": "https://github.com/algonaut/algo-vue-components",
+  "bugs": "https://github.com/algonaut/algo-vue-components/issues",
+  "files": [
+    "dist"
+  ],
+  "private": false,
   "version": "0.0.0",
-  "private": true,
+  "license": "MIT",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "test:unit": "vue-cli-service test:unit",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "build:npm": "vue-cli-service build --target lib --name @algonaut/algo-vue-components 'src/components/index.js'"
   },
   "dependencies": {
     "@algonaut/algo-validation-agent": "^0.4.0",

@@ -2,8 +2,6 @@
 
 A set of example Vue components for building asset transactions in your web applications.
 
-### Features
-
 ## Demo
 
 [Live Demo](https://algonaut.github.com/algo-vue-components)

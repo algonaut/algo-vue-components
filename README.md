@@ -1,29 +1,54 @@
 # algo-vue-components
 
-## Project setup
+A set of example Vue components for building asset transactions in your web applications.
+
+### Features
+
+## Demo
+
+[Live Demo](https://algonaut.github.com/algo-vue-components)
+
+## Usage
+
+```bash
+npm install @algonaut/algo-vue-components
 ```
+
+Example Create Asset Form:
+
+```
+<template>
+  <CreateAssetForm @submit="handleSubmit" />
+
+</template>
+
+<script>
+import {
+  CreateAssetForm,
+} from '@algonaut/algo-vue-components';
+
+export default {
+  components: {
+    CreateAssetForm,
+  },
+  methods: {
+    handleSubmit(payload) {
+      console.log(payload);
+    }
+  }
+};
+</script>
+```
+
+## Contributing
+
+```
+# Install dependencies
 npm install
-```
 
-### Compiles and hot-reloads for development
-```
+# Compile and hot-reload for development
 npm run serve
-```
 
-### Compiles and minifies for production
-```
+# Compile and minify for production
 npm run build
 ```
-
-### Run your unit tests
-```
-npm run test:unit
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).

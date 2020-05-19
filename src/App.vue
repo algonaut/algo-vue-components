@@ -1,16 +1,34 @@
 <template>
   <div id="app">
-    <AlgoInput />
+    <b-container>
+      <h2>Create Asset</h2>
+      <CreateAssetForm @submit="handleSubmit" />
+
+      <h2>Send Asset</h2>
+      <SendAssetForm @submit="handleSubmit" />
+
+      <h2>Clawback Asset</h2>
+      <ClawbackAssetForm @submit="handleSubmit" />
+    </b-container>
   </div>
 </template>
 
 <script>
-import AlgoInput from './components/AlgoInput.vue';
+import CreateAssetForm from '@/components/forms/CreateAssetForm';
+import SendAssetForm from '@/components/forms/SendAssetForm';
+import ClawbackAssetForm from '@/components/forms/ClawbackAssetForm';
 
 export default {
   name: 'App',
   components: {
-    AlgoInput
+    CreateAssetForm,
+    SendAssetForm,
+    ClawbackAssetForm
+  },
+  methods: {
+    handleSubmit(payload) {
+      console.log(payload);
+    }
   }
 };
 </script>

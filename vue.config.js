@@ -1,4 +1,11 @@
 module.exports = {
+  publicPath:
+    process.env.NODE_ENV === 'production' ? '/algo-vue-components/' : '/',
+  configureWebpack: {
+    output: {
+      libraryExport: 'default'
+    }
+  },
   chainWebpack: config => {
     config.module
       .rule('vue')

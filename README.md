@@ -4,7 +4,7 @@ A set of example Vue components for building asset transactions in your web appl
 
 ## Demo
 
-[Live Demo](https://algonaut.github.com/algo-vue-components)
+[Live Demo](https://algonaut.github.io/algo-vue-components/)
 
 ## Usage
 

@@ -10,7 +10,9 @@
     <!-- <div v-if="!isValid" class="error text-danger" style="margin-bottom: 1rem;">
       Please correct the errors above before submitting
     </div> -->
-    <b-button :disabled="!isValid" type="submit">Submit</b-button>
+    <b-button :disabled="!isValid" type="submit" style="margin-top: 10px;"
+      >Submit</b-button
+    >
   </b-form>
 </template>
 
@@ -23,16 +25,16 @@ export default {
     return {
       isValid: false,
       model: {
-        assetName: '', // asset name
-        assetUnitName: '', // unit name
-        decimalPlaces: 0, // decimal places
-        assetTotal: 0, // total issuance
-        assetURL: '', // asset url
-        assetClawback: '', // clawback address
-        assetFreeze: '', // freeze address
-        assetManager: '', // manager address
-        assetReserve: '', // reserve address
-        assetMetadataHash: '', // asset metadata hash
+        assetName: '',
+        assetUnitName: '',
+        decimalPlaces: 0,
+        assetTotal: 0,
+        assetURL: '',
+        assetClawback: '',
+        assetFreeze: '',
+        assetManager: '',
+        assetReserve: '',
+        assetMetadataHash: '',
         defaultFrozen: false
       },
       schema: {
@@ -133,9 +135,7 @@ export default {
   methods: {
     handleSubmit() {
       if (this.$data.isValid) {
-        this.$emit('submit', {
-          apar: this.model
-        });
+        this.$emit('submit', this.model);
       }
     },
     handleValidation(isValid, errors) {
@@ -146,4 +146,10 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+/deep/ #freeze-by-default {
+  box-shadow: none !important;
+  float: left;
+  width: 30px;
+}
+</style>

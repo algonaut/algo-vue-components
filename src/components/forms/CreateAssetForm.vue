@@ -23,18 +23,16 @@ export default {
     return {
       isValid: false,
       model: {
-        apar: {
-          an: '', // asset name
-          un: '', // unit name
-          dc: 0, // decimal places
-          t: 0, // total issuance
-          au: '', // asset url
-          c: '', // creator address
-          f: '', // freeze address
-          m: '', // manager address
-          r: '', // reserve address
-          am: '' // asset metadata hash
-        },
+        assetName: '', // asset name
+        assetUnitName: '', // unit name
+        decimalPlaces: 0, // decimal places
+        assetTotal: 0, // total issuance
+        assetURL: '', // asset url
+        assetClawback: '', // clawback address
+        assetFreeze: '', // freeze address
+        assetManager: '', // manager address
+        assetReserve: '', // reserve address
+        assetMetadataHash: '', // asset metadata hash
         defaultFrozen: false
       },
       schema: {
@@ -43,7 +41,7 @@ export default {
             type: 'input',
             inputType: 'text',
             label: 'Asset Name',
-            model: 'apar.an',
+            model: 'assetName',
             required: true,
             validator: validators.assetName
           },
@@ -51,15 +49,15 @@ export default {
             type: 'input',
             inputType: 'text',
             label: 'Unit Name',
-            model: 'apar.un',
+            model: 'assetUnitName',
             required: true,
-            validator: validators.unitName
+            validator: validators.assetUnitName
           },
           {
             type: 'select',
             values: Array.from(Array(20), (x, i) => i),
             label: 'Decimal Places',
-            model: 'apar.dc',
+            model: 'assetDecimals',
             required: true,
             selectOptions: {
               hideNoneSelectedText: true
@@ -71,22 +69,22 @@ export default {
             inputType: 'text',
             label: 'Total Issuance',
             required: true,
-            model: 'apar.t',
-            validator: validators.totalIssuance,
+            model: 'assetTotal',
+            validator: validators.assetTotal,
             hint: 'Decimal places are implied'
           },
           {
             type: 'input',
             inputType: 'text',
             label: 'Asset Url',
-            model: 'apar.au',
+            model: 'assetURL',
             validator: validators.assetUrl
           },
           {
             type: 'input',
             inputType: 'text',
-            label: 'Creator Address',
-            model: 'apar.c',
+            label: 'Clawback Address',
+            model: 'assetClawback',
             required: true,
             validator: validators.algoAddress
           },
@@ -94,35 +92,36 @@ export default {
             type: 'input',
             inputType: 'text',
             label: 'Freeze Address',
-            model: 'apar.f',
+            model: 'assetFreeze',
             validator: validators.algoAddress
           },
           {
             type: 'input',
             inputType: 'text',
             label: 'Manager Address',
-            model: 'apar.m',
+            model: 'assetManager',
             validator: validators.algoAddress
           },
           {
             type: 'input',
             inputType: 'text',
             label: 'Reserve Address',
-            model: 'apar.r',
+            model: 'assetReserve',
             validator: validators.algoAddress
           },
           {
             type: 'input',
             inputType: 'text',
             label: 'Asset Metadata Hash',
-            model: 'apar.am',
+            model: 'assetMetadataHash',
             validator: validators.assetMetadataHash
           },
           {
             type: 'input',
             inputType: 'checkbox',
             label: 'Freeze by default',
-            model: 'defaultFrozen'
+            model: 'defaultFrozen',
+            validator: validators.defaultFrozen
           }
         ]
       },

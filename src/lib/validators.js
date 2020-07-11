@@ -1,7 +1,7 @@
 import {
   core,
-  assets,
-  transactionFields
+  assetFieldValidators,
+  transactionFieldValidators
 } from '@algonaut/algo-validation-agent/dist/algo-validation-agent.cjs';
 
 export function algoAddress(val) {
@@ -12,43 +12,43 @@ export function algoAddress(val) {
 }
 
 export function assetName(val) {
-  if (!assets.assetName(val)) {
+  if (!assetFieldValidators.assetName(val)) {
     return 'Please provide an asset name with less than 32 characters';
   }
   return [];
 }
 
-export function unitName(val) {
-  if (!assets.unitName(val)) {
+export function assetUnitName(val) {
+  if (!assetFieldValidators.assetUnitName(val)) {
     return 'Please provide a unit name with less than 8 characters';
   }
   return [];
 }
 
-export function totalIssuance(val) {
-  if (!assets.assetTotalIssuance(parseInt(val, 10))) {
+export function assetTotal(val) {
+  if (!assetFieldValidators.assetTotal(Number(val))) {
     return `Please provide a valid number of assets no more than
     ${Number.MAX_SAFE_INTEGER} to add to the reserve`;
   }
   return [];
 }
 
-export function assetAmt(val) {
-  if (!transactionFields.transactionAmount(parseInt(val, 10))) {
+export function amount(val) {
+  if (!transactionFieldValidators.amount(Number(val))) {
     return `Please provide a valid number of assets no more than
     ${Number.MAX_SAFE_INTEGER} to send`;
   }
   return [];
 }
 
-export function xaid(val) {
-  if (!core.isAssetIndex(parseInt(val, 10))) {
+export function assetIndex(val) {
+  if (!assetFieldValidators.assetIndex(Number(val))) {
     return `Please provide a valid Algorand asset index`;
   }
 }
 
 export function assetMetadataHash(val) {
-  if (!assets.assetMetadataHash(val)) {
+  if (!assetFieldValidators.assetMetadataHash(val)) {
     return 'Please provide a valid asset metadata hash';
   }
 }
@@ -56,9 +56,9 @@ export function assetMetadataHash(val) {
 export default {
   algoAddress,
   assetName,
-  unitName,
-  totalIssuance,
-  assetAmt,
-  xaid,
+  assetUnitName,
+  assetTotal,
+  amount,
+  assetIndex,
   assetMetadataHash
 };

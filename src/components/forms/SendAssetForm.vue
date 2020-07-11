@@ -14,10 +14,10 @@ export default {
   data() {
     return {
       model: {
-        xaid: '',
-        aamt: '',
-        arcv: '',
-        snd: ''
+        assetIndex: '',
+        amount: '',
+        to: '',
+        from: ''
       },
       schema: {
         fields: [
@@ -25,23 +25,23 @@ export default {
             type: 'input',
             inputType: 'text',
             label: 'Algorand Asset ID',
-            model: 'xaid',
+            model: 'assetIndex',
             required: true,
-            validator: validators.xaid
+            validator: validators.assetIndex
           },
           {
             type: 'input',
             inputType: 'text',
             label: 'Amount',
             required: true,
-            model: 'aamt',
-            validator: validators.assetAmt
+            model: 'amount',
+            validator: validators.amount
           },
           {
             type: 'input',
             inputType: 'text',
             label: 'Recipient address',
-            model: 'arcv',
+            model: 'to',
             required: true,
             validator: validators.algoAddress
           },
@@ -49,7 +49,7 @@ export default {
             type: 'input',
             inputType: 'text',
             label: 'Sender Address',
-            model: 'snd',
+            model: 'from',
             required: true,
             validator: validators.algoAddress
           }

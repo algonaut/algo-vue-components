@@ -18,7 +18,7 @@
     "build:npm": "vue-cli-service build --target lib --name @algonaut/algo-vue-components 'src/components/index.js'"
   },
   "dependencies": {
-    "@algonaut/algo-validation-agent": "^0.4.0",
+    "@algonaut/algo-validation-agent": "^0.5.0",
     "bootstrap-vue": "^2.14.0",
     "core-js": "^3.6.4",
     "vue": "^2.6.11",

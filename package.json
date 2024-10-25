@@ -21,7 +21,7 @@
     "@algonaut/algo-validation-agent": "^0.5.0",
     "bootstrap-vue": "^2.14.0",
     "core-js": "^3.6.4",
-    "vue": "^2.6.11",
+    "vue": "^3.0.0",
     "vue-form-generator": "^2.3.4"
   },
   "devDependencies": {
